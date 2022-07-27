@@ -1,0 +1,49 @@
+Step 1 : - Downlaod the Docker Container Image 
+
+    Commmand : - docker pull ubuntu
+
+
+Step 2 : - Start a Docker Container while exposing the port 22 on the local port 2200. 
+    
+    Command : - docker run -it --name <name_of_the_container> -p 2200:22 -d ubuntu:latest
+
+
+Step 3 : - Update the repositories
+
+    Command : - apt update && apt upgrade -y 
+
+
+Step 4 : - Install sudo 
+
+    command : - apt install sudo 
+
+
+Step 5 : - Install Openssh Server 
+
+    Command : - sudo apt install openssh-server -y 
+
+
+Step 6 : - Set Root password 
+
+    Command : - sudo passwd root 
+                [Eneter the password]
+
+
+Step 7 : - Install Vim or Nano [Installing Vim]
+
+    Command : - sudo apt install vim -y
+
+
+Step 8 : - Edit the ssh configuration file 
+
+    Command : - sudo vim /etc/ssh/sshd_config
+                [Add the following line: - "PermitRootLogin Yes" ]
+                [ below the line "# PermitRootLogin prohibit-password" ]
+
+
+Step 9 : - Start the ssh service 
+
+    Command : - service ssh start 
+
+
+You are all done ! Congrats
